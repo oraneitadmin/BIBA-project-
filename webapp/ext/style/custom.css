@@ -1,0 +1,21 @@
+/* 
+   Force the BOM section to have a maximum height.
+   This will stop it from stretching to fill the whole screen.
+*/
+[id*="--fe::FacetSection::BOM"], 
+[id*="--fe::FacetSubSection::BOM"] {
+    max-height: 550px !important;
+    /* height: auto !important; */
+}
+
+/* Ensure the table within it behaves well */
+/* [id*="--fe::table::_bom::LineItem::Table"] {
+    height: auto !important;
+} */
+
+/* Allow it to be full height ONLY in Full Screen mode */
+.sapUiFE-Table-FullScreen-Dialog [id*="--fe::FacetSection::BOM"],
+.sapUiFE-FullScreen-Dialog [id*="--fe::FacetSection::BOM"],
+.sapFE-Table-FullScreen [id*="--fe::FacetSection::BOM"] {
+    max-height: none !important;
+}

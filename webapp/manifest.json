@@ -102,7 +102,11 @@
             }
         },
         "resources": {
-            "css": []
+            "css": [
+                {
+                    "uri": "ext/style/custom.css"
+                }
+            ]
         },
         "extends": {
             "extensions": {
@@ -164,6 +168,7 @@
                     "name": "sap.fe.templates.ObjectPage",
                     "options": {
                         "settings": {
+                            "fitContainer": false,
                             "editableHeaderContent": false,
                             "contextPath": "/ZI_Style_master_data_ROOT",
                             "navigation": {
@@ -179,7 +184,9 @@
                                         "type": "GridTable",
                                         "creationMode": {
                                             "name": "InlineCreationRows"
-                                        }
+                                        },
+                                        "enableFullScreen": true,
+                                        "rowCountMode": "Auto"
                                     },
                                     "actions": {
                                         "uploadmm": {
