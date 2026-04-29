@@ -1,0 +1,77 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:macros="sap.fe.macros"
+>
+    <Dialog
+        id="subBomDialog"
+        title="Create Sub-BOM Entry"
+    >
+        <content>
+            <form:SimpleForm id="_IDGenSimpleForm1"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="4"
+                labelSpanL="4"
+                labelSpanM="4"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="0"
+                emptySpanL="0"
+                emptySpanM="0"
+                emptySpanS="0"
+                columnsXL="2"
+                columnsL="2"
+                columnsM="2"
+                singleContainerFullSize="false"
+            >
+                <form:content>
+                    <Label id="_IDGenLabel1" text="Fabric No." />
+                    <macros:Field metaPath="FabricNo" id="FieldFabricNo" />
+                    <Label id="_IDGenLabel2" text="Fabric Usage" />
+                    <macros:Field metaPath="FabricUsage" id="FieldFabricUsage" />
+                    <Label id="_IDGenLabel3" text="Fabric Variety" />
+                    <macros:Field metaPath="FabricVariety" id="FieldFabricVariety" />
+                    <Label id="_IDGenLabel4" text="Fabric Type" />
+                    <macros:Field metaPath="FabricType" id="FieldFabricType" />
+                    <Label id="_IDGenLabel5" text="Fabric Content" />
+                    <macros:Field metaPath="FabricContent" id="FieldFabricContent" />
+                    <Label id="_IDGenLabel6" text="Fabric Base" />
+                    <macros:Field metaPath="FabricBase" id="FieldFabricBase" />
+                    <Label id="_IDGenLabel7" text="Count Construction" />
+                    <macros:Field metaPath="CountConstruction" id="FieldCountConstruction" />
+                    <Label id="_IDGenLabel8" text="Color Family" />
+                    <macros:Field metaPath="ColorFamily" id="FieldColorFamily" />
+                    <Label id="_IDGenLabel9" text="Color" />
+                    <macros:Field metaPath="Color" id="FieldColor" />
+                    <Label id="_IDGenLabel10" text="Fabric Remarks" />
+                    <macros:Field metaPath="FabricRemarks" id="FieldFabricRemarks" />
+                    <Label id="_IDGenLabel11" text="Fabric Desc" />
+                    <macros:Field metaPath="FabricDesc" id="FieldFabricDesc" />
+                    <Label id="_IDGenLabel12" text="Base UOM" />
+                    <macros:Field metaPath="BaseUom" id="FieldBaseUom" />
+                    <Label id="_IDGenLabel13" text="Fabric Average" />
+                    <macros:Field metaPath="FabricAverage" id="FieldFabricAverage" />
+                    <Label id="_IDGenLabel14" text="Process Loss" />
+                    <macros:Field metaPath="ProcessLoss" id="FieldProcessLoss" />
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        <beginButton>
+            <Button
+                id="btnSaveSubBom"
+                text="Save"
+                type="Emphasized"
+                press="onSaveSubBom"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                id="btnCancelSubBom"
+                text="Cancel"
+                press="onCancelSubBom"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

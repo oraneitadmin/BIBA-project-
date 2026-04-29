@@ -1,0 +1,240 @@
+{
+    "_version": "1.59.0",
+    "sap.app": {
+        "id": "zstylemasterfin.zstylemasterfin",
+        "type": "application",
+        "i18n": {
+            "bundleUrl": "i18n/i18n.properties",
+            "supportedLocales": [
+                ""
+            ]
+        },
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:lrop",
+            "version": "1.18.5",
+            "toolsId": "a5f604ed-0384-4661-af4f-bdbbf2e683a4"
+        },
+        "dataSources": {
+            "annotation": {
+                "type": "ODataAnnotation",
+                "uri": "annotations/annotation.xml",
+                "settings": {
+                    "localUri": "annotations/annotation.xml"
+                }
+            },
+            "mainService": {
+                "uri": "/sap/opu/odata4/sap/zsb_style_master/srvd/sap/zsd_style_master/0001/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [
+                        "annotation"
+                    ],
+                    "localUri": "localService/mainService/metadata.xml",
+                    "odataVersion": "4.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.120.14",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.fe.templates": {},
+                "sap.fe.macros": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "zstylemasterfin.zstylemasterfin.i18n.i18n",
+                    "supportedLocales": [
+                        ""
+                    ]
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
+                }
+            },
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties",
+                "settings": {
+                    "supportedLocales": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "resources": {
+            "css": []
+        },
+        "extends": {
+            "extensions": {
+                "sap.ui.controllerExtensions": {
+                    "sap.fe.templates.ObjectPage": {
+                        "controllerName": "zstylemasterfin.zstylemasterfin.ext.controller.ObjectPageExt"
+                    }
+                }
+            }
+        },
+        "routing": {
+            "config": {},
+            "routes": [
+                {
+                    "pattern": ":?query:",
+                    "name": "ZI_Style_master_data_ROOTList",
+                    "target": "ZI_Style_master_data_ROOTList"
+                },
+                {
+                    "pattern": "ZI_Style_master_data_ROOT({key}):?query:",
+                    "name": "ZI_Style_master_data_ROOTObjectPage",
+                    "target": "ZI_Style_master_data_ROOTObjectPage"
+                },
+                {
+                    "pattern": "ZI_Style_master_data_ROOT({key})/_bom({key2}):?query:",
+                    "name": "ZI_STYLE_BOM_COMP_VIEWObjectPage",
+                    "target": "ZI_STYLE_BOM_COMP_VIEWObjectPage"
+                }
+            ],
+            "targets": {
+                "ZI_Style_master_data_ROOTList": {
+                    "type": "Component",
+                    "id": "ZI_Style_master_data_ROOTList",
+                    "name": "sap.fe.templates.ListReport",
+                    "options": {
+                        "settings": {
+                            "contextPath": "/ZI_Style_master_data_ROOT",
+                            "variantManagement": "Page",
+                            "navigation": {
+                                "ZI_Style_master_data_ROOT": {
+                                    "detail": {
+                                        "route": "ZI_Style_master_data_ROOTObjectPage"
+                                    }
+                                }
+                            },
+                            "controlConfiguration": {
+                                "@com.sap.vocabularies.UI.v1.LineItem": {
+                                    "tableSettings": {
+                                        "type": "ResponsiveTable"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "ZI_Style_master_data_ROOTObjectPage": {
+                    "type": "Component",
+                    "id": "ZI_Style_master_data_ROOTObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "contextPath": "/ZI_Style_master_data_ROOT",
+                            "navigation": {
+                                "_bom": {
+                                    "detail": {
+                                        "route": "ZI_STYLE_BOM_COMP_VIEWObjectPage"
+                                    }
+                                }
+                            },
+                            "controlConfiguration": {
+                                "_bom/@com.sap.vocabularies.UI.v1.LineItem": {
+                                    "tableSettings": {
+                                        "type": "GridTable",
+                                        "creationMode": {
+                                            "name": "InlineCreationRows"
+                                        }
+                                    },
+                                    "actions": {
+                                        "uploadmm": {
+                                            "press": "zstylemasterfin.zstylemasterfin.ext.controller.UploadMM.upload_mm",
+                                            "visible": false,
+                                            "enabled": false,
+                                            "requiresSelection": false,
+                                            "text": "Upload",
+                                            "position": {
+                                                "anchor": "DataFieldForAction::com.sap.gateway.srvd.zsd_style_master.v0001.DeleteSizeMsmt::com.sap.gateway.srvd.zsd_style_master.v0001.ZI_STYLE_BOM_COMP_VIEWType",
+                                                "placement": "After"
+                                            }
+                                        },
+                                        "SubBom": {
+                                            "press": "zstylemasterfin.zstylemasterfin.ext.controller.AddSubBom.SubBom",
+                                            "visible": true,
+                                            "enabled": true,
+                                            "requiresSelection": true,
+                                            "text": "SubBom",
+                                            "priority": "High",
+                                            "position": {
+                                                "anchor": "DataFieldForAction::com.sap.gateway.srvd.zsd_style_master.v0001.CheckSizeMsmt::com.sap.gateway.srvd.zsd_style_master.v0001.ZI_STYLE_BOM_COMP_VIEWType",
+                                                "placement": "Before"
+                                            }
+                                        },
+                                        "DwdMeas": {
+                                            "press": "zstylemasterfin.zstylemasterfin.ext.controller.DwdMeas.DwdMeas",
+                                            "visible": true,
+                                            "enabled": true,
+                                            "requiresSelection": true,
+                                            "text": "Download Measurement"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "ZI_STYLE_BOM_COMP_VIEWObjectPage": {
+                    "type": "Component",
+                    "id": "ZI_STYLE_BOM_COMP_VIEWObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "contextPath": "/ZI_Style_master_data_ROOT/_bom"
+                        }
+                    }
+                }
+            }
+        },
+        "flexBundle": false
+    },
+    "sap.fiori": {
+        "registrationIds": [],
+        "archeType": "transactional"
+    }
+}

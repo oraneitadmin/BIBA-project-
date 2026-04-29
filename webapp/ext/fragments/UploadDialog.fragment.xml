@@ -1,0 +1,36 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified">
+
+    <Dialog
+        id="uploadDialog"
+        title="Upload CSV">
+
+        <VBox id="uploadVBox" class="sapUiSmallMargin">
+         
+         <Text id="uploadInstructionText" text="{i18n>uploadCsvInstruction}" class="sapUiSmallMarginBottom"/>
+           <u:FileUploader
+                id="fileUploader"
+                width="100%"
+                fileType="csv"
+                style="Emphasized" 
+                change=".onFileChange"/>
+        </VBox>
+
+        <beginButton>
+            <Button
+                id="btnUpload"
+                text="Upload" 
+                press=".onUploadPress"/>
+        </beginButton>
+
+        <endButton>
+            <Button
+                id="btnCancel"
+                text="Cancel" 
+                press=".onCancelPress"/>
+        </endButton>
+
+    </Dialog>
+</core:FragmentDefinition>

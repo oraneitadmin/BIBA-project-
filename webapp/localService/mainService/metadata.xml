@@ -1,0 +1,2046 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.zsd_style_master.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="ZI_Style_master_data_ROOTType">
+                <Key>
+                    <PropertyRef Name="Styleid"/>
+                    <PropertyRef Name="Season"/>
+                    <PropertyRef Name="Category"/>
+                    <PropertyRef Name="DesignColor"/>
+                    <PropertyRef Name="ArticleSize"/>
+                    <PropertyRef Name="BaseColor"/>
+                    <PropertyRef Name="StyleType"/>
+                    <PropertyRef Name="StyleCode"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="Styleid" Type="Edm.String" Nullable="false" MaxLength="41"/>
+                <Property Name="Season" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Category" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="DesignColor" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="ArticleSize" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="BaseColor" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="StyleType" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="StyleCode" Type="Edm.String" Nullable="false" MaxLength="90"/>
+                <Property Name="StyleDesc" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="StyleNo" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="ColorFamily" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="LaunchDate" Type="Edm.Date"/>
+                <Property Name="Department" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="Launch" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="MhGroup" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="Suffix" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Prefix" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Fit" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="WashCareType" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="FitBottom" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="FitOuterwear" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Bottom" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Wash_Care" Type="Edm.String" Nullable="false" MaxLength="200"/>
+                <Property Name="PiecesInSet" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="BaseFabric" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="ProcessType" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="BodyLength" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Approved" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="ApprovedBy" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="ApprovedDate" Type="Edm.Date"/>
+                <Property Name="UploadBy" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="UploadDate" Type="Edm.Date"/>
+                <Property Name="Catalogue" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Brand" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Barcode" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="FabType1" Type="Edm.String" Nullable="false" MaxLength="25"/>
+                <Property Name="FabType2" Type="Edm.String" Nullable="false" MaxLength="25"/>
+                <Property Name="FabType3" Type="Edm.String" Nullable="false" MaxLength="25"/>
+                <Property Name="BaseFabric2" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="BaseFabric3" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="BaseFabric4" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="BaseFabric5" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="BaseFabric6" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="BaseUom" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="itemno" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ItemType" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ItemGroup" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="VendorNo" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Waers" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="Mrp" Type="Edm.Decimal" Nullable="false" Precision="11" Scale="variable"/>
+                <Property Name="TentativeMrp" Type="Edm.Decimal" Nullable="false" Precision="11" Scale="variable"/>
+                <Property Name="SleeveType" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="PictureDirectory" Type="Edm.String" Nullable="false" MaxLength="200"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="DocumentType" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Class" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ProdBomNo" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="NeckShape" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ProdDescription2" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <Property Name="ItemCreated" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="DesignHandover" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ThreadType" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ThreadColor" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="BomCreatedStatus" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="FirmPlannedStatus" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="AllocUploadStatus" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="AllocQty" Type="Edm.Decimal" Nullable="false" Precision="7" Scale="2"/>
+                <Property Name="MhCode" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="Product" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ProductCode" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="SubCategory" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="SubCategoryCode" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ProdCategory" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ProdCategoryCode" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ProductTitle" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <Property Name="ProdDescription" Type="Edm.String" Nullable="false" MaxLength="250"/>
+                <Property Name="ItemList" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="CreatedBy" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="CreatedOn" Type="Edm.Date"/>
+                <Property Name="CreationTime" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="FirmPlannedNo" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Remarks" Type="Edm.String" Nullable="false" MaxLength="250"/>
+                <Property Name="LastModifiedBy" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="LastModifiedDate" Type="Edm.Date"/>
+                <Property Name="BaseColor2" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="SizeInCm" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="RawMaterialSample" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="RawMatUom" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="RawMatQty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="Style" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="RefStylecode" Type="Edm.String" Nullable="false" MaxLength="90"/>
+                <Property Name="Color" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="LtEnteredBy" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="LtEnteredOn" Type="Edm.Date"/>
+                <Property Name="mat_status" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="__CreateByAssociationControl" Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_Style_master_data_ROOTCbAControl"/>
+                <Property Name="__EntityControl" Type="com.sap.gateway.srvd.zsd_style_master.v0001.EntityControl"/>
+                <Property Name="__FieldControl" Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_Style_master_data_ROOTControl"/>
+                <Property Name="__OperationControl" Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_Style_master_data_ROOTOperationControl"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd.zsd_style_master.v0001.SAP__Message)" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="com.sap.gateway.srvd.zsd_style_master.v0001.I_DraftAdministrativeDataType"/>
+                <NavigationProperty Name="SiblingEntity" Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_Style_master_data_ROOTType"/>
+                <NavigationProperty Name="_bom" Type="Collection(com.sap.gateway.srvd.zsd_style_master.v0001.ZI_STYLE_BOM_COMP_VIEWType)" Partner="_stl">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="ZI_STYLE_BOM_COMP_VIEWType">
+                <Key>
+                    <PropertyRef Name="Styleid"/>
+                    <PropertyRef Name="StyleCode"/>
+                    <PropertyRef Name="ItemType"/>
+                    <PropertyRef Name="FabricNo"/>
+                    <PropertyRef Name="OldFabricNo"/>
+                    <PropertyRef Name="StyleType"/>
+                    <PropertyRef Name="Season"/>
+                    <PropertyRef Name="DesignColor"/>
+                    <PropertyRef Name="Sequence"/>
+                    <PropertyRef Name="ArticleSize"/>
+                    <PropertyRef Name="Category"/>
+                    <PropertyRef Name="BaseColor"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="Styleid" Type="Edm.String" Nullable="false" MaxLength="41"/>
+                <Property Name="StyleCode" Type="Edm.String" Nullable="false" MaxLength="90"/>
+                <Property Name="ItemType" Type="Edm.String" Nullable="false" MaxLength="25"/>
+                <Property Name="FabricNo" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="OldFabricNo" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="StyleType" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Season" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="DesignColor" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="Sequence" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="ArticleSize" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Category" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="BaseColor" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="BomNo" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="FabricUsage" Type="Edm.String" Nullable="false" MaxLength="150"/>
+                <Property Name="FabricVariety" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="FabricType" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="FabricContent" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="FabricBase" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="CountConstruction" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ColorFamily" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Color" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="FabricRemarks" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <Property Name="FabricDesc" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <Property Name="ItemGroup" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ProductType" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="BaseUom" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="FabricAverage" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="FabricWidth" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="Uom" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="GarmentLength" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="SleeveLength" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="ChestMeasurement" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="ShoulderMeasurement" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="Hip" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="WaistMeasurement" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="InsemLength" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="DirectPurItem" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="TentativeRate" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="StandardCost" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="Wip" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="WipRefNo" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="WipQty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="MeasurementCreated" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="NotConsider" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="MatNo" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Vendor" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="PriceUnit" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="ProcessLoss" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="ItemNew" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="FabricNoMain" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="FabricSeq" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="LastChangeBy" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="LastChangeOn" Type="Edm.Date"/>
+                <Property Name="LastChangeAt" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="__EntityControl" Type="com.sap.gateway.srvd.zsd_style_master.v0001.EntityControl"/>
+                <Property Name="__OperationControl" Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_STYLE_BOM_COMP_VIEWOperationControl"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd.zsd_style_master.v0001.SAP__Message)" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="com.sap.gateway.srvd.zsd_style_master.v0001.I_DraftAdministrativeDataType"/>
+                <NavigationProperty Name="SiblingEntity" Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_STYLE_BOM_COMP_VIEWType"/>
+                <NavigationProperty Name="_stl" Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_Style_master_data_ROOTType" Nullable="false" Partner="_bom">
+                    <ReferentialConstraint Property="Styleid" ReferencedProperty="Styleid"/>
+                    <ReferentialConstraint Property="StyleType" ReferencedProperty="StyleType"/>
+                    <ReferentialConstraint Property="DesignColor" ReferencedProperty="DesignColor"/>
+                    <ReferentialConstraint Property="Season" ReferencedProperty="Season"/>
+                    <ReferentialConstraint Property="StyleCode" ReferencedProperty="StyleCode"/>
+                    <ReferentialConstraint Property="ArticleSize" ReferencedProperty="ArticleSize"/>
+                    <ReferentialConstraint Property="BaseColor" ReferencedProperty="BaseColor"/>
+                    <ReferentialConstraint Property="Category" ReferencedProperty="Category"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="I_DraftAdministrativeDataType">
+                <Key>
+                    <PropertyRef Name="DraftUUID"/>
+                    <PropertyRef Name="DraftEntityType"/>
+                </Key>
+                <Property Name="DraftUUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="DraftEntityType" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="CreatedByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="DraftAccessType" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="ProcessingStartDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="InProcessByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="DraftIsKeptByUser" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="EnqueueStartDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftIsCreatedByMe" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftIsLastChangedByMe" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftIsProcessedByMe" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="CreatedByUserDescription" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="LastChangedByUserDescription" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="InProcessByUserDescription" Type="Edm.String" Nullable="false" MaxLength="80"/>
+            </EntityType>
+            <ComplexType Name="ZI_Style_master_data_ROOTControl">
+                <Property Name="itemno" Type="Edm.Byte" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="ZI_Style_master_data_ROOTCbAControl">
+                <Property Name="_bom" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="ZI_Style_master_data_ROOTOperationControl">
+                <Property Name="Edit" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="ZI_STYLE_BOM_COMP_VIEWOperationControl">
+                <Property Name="CheckSizeMsmt" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DeleteSizeMsmt" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="EnterSizeMsmt" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="EntityControl">
+                <Property Name="Updatable" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="SAP__Message">
+                <Property Name="code" Type="Edm.String" Nullable="false"/>
+                <Property Name="message" Type="Edm.String" Nullable="false"/>
+                <Property Name="target" Type="Edm.String"/>
+                <Property Name="additionalTargets" Type="Collection(Edm.String)" Nullable="false"/>
+                <Property Name="transition" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="numericSeverity" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="longtextUrl" Type="Edm.String"/>
+            </ComplexType>
+            <Action Name="CheckSizeMsmt" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_STYLE_BOM_COMP_VIEWType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_STYLE_BOM_COMP_VIEWType" Nullable="false"/>
+            </Action>
+            <Action Name="Resume" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_Style_master_data_ROOTType" Nullable="false"/>
+            </Action>
+            <Action Name="DeleteSizeMsmt" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_STYLE_BOM_COMP_VIEWType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_STYLE_BOM_COMP_VIEWType" Nullable="false"/>
+            </Action>
+            <Action Name="Discard" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_Style_master_data_ROOTType" Nullable="false"/>
+            </Action>
+            <Action Name="EnterSizeMsmt" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_STYLE_BOM_COMP_VIEWType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_STYLE_BOM_COMP_VIEWType" Nullable="false"/>
+            </Action>
+            <Action Name="Activate" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_Style_master_data_ROOTType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_Style_master_data_ROOTType" Nullable="false"/>
+            </Action>
+            <Action Name="Prepare" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_Style_master_data_ROOTType" Nullable="false"/>
+            </Action>
+            <Action Name="Edit" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_Style_master_data_ROOTType" Nullable="false"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_Style_master_data_ROOTType" Nullable="false"/>
+            </Action>
+            <EntityContainer Name="Container">
+                <EntitySet Name="I_DraftAdministrativeData" EntityType="com.sap.gateway.srvd.zsd_style_master.v0001.I_DraftAdministrativeDataType"/>
+                <EntitySet Name="ZI_STYLE_BOM_COMP_VIEW" EntityType="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_STYLE_BOM_COMP_VIEWType">
+                    <NavigationPropertyBinding Path="DraftAdministrativeData" Target="I_DraftAdministrativeData"/>
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="ZI_STYLE_BOM_COMP_VIEW"/>
+                    <NavigationPropertyBinding Path="_stl" Target="ZI_Style_master_data_ROOT"/>
+                </EntitySet>
+                <EntitySet Name="ZI_Style_master_data_ROOT" EntityType="com.sap.gateway.srvd.zsd_style_master.v0001.ZI_Style_master_data_ROOTType">
+                    <NavigationPropertyBinding Path="DraftAdministrativeData" Target="I_DraftAdministrativeData"/>
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="ZI_Style_master_data_ROOT"/>
+                    <NavigationPropertyBinding Path="_bom" Target="ZI_STYLE_BOM_COMP_VIEW"/>
+                </EntitySet>
+            </EntityContainer>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Styleid">
+                <Annotation Term="SAP__common.Label" String="Style ID"/>
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="SAP Style No."/>
+                <Annotation Term="SAP__common.QuickInfo" String="SAP Style No."/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Season">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Season"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Category">
+                <Annotation Term="SAP__common.Label" String="Old Category"/>
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Category"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Category of User's Department"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/DesignColor">
+                <Annotation Term="SAP__common.Label" String="Design Color"/>
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Heading" String="Text"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Text (30 Characters)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ArticleSize">
+                <Annotation Term="SAP__common.Label" String="Article Size"/>
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Size"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Size"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/BaseColor">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Base Color"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/StyleType">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Style Type ( Copy, S"/>
+                <Annotation Term="SAP__common.Heading" String="Style Type ( Copy, SMU, Repeat, Reopen)"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Style Type ( Copy, SMU, Repeat, Reopen)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/StyleCode">
+                <Annotation Term="SAP__common.Label" String="Style Code"/>
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Text Field Length 90"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/StyleNo">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Number Range"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Style Number Range"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ColorFamily">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Color Family"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Colour Family"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Department">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="PLM User's Function"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Launch">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Launch"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Launch Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/MhGroup">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Group"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Suffix">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Suffix"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Suffix for Style"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Prefix">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Prefix"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Fit">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Fit"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/WashCareType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="WashCare Type"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Wash Care Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/FitBottom">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Fit Bottom"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/FitOuterwear">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Fit Outerwear"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Bottom">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Bottom"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/PiecesInSet">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Character Field with Length 10"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/BaseFabric">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Base Fabric"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ProcessType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Process Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/BodyLength">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Body Length"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ApprovedBy">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="User Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/UploadBy">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="User Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Catalogue">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Catalogue"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Brand">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Brand"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Barcode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Char20"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Char 20"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/FabType1">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Item Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/FabType2">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Item Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/FabType3">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Item Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/BaseFabric2">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Base Fabric"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/BaseFabric3">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Base Fabric"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/BaseFabric4">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Base Fabric"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/BaseFabric5">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Base Fabric"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/BaseFabric6">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Base Fabric"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/BaseUom">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Base Unit of Measure"/>
+                <Annotation Term="SAP__common.Heading" String="BUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/itemno">
+                <Annotation Term="SAP__common.Label" String="Item No."/>
+                <Annotation Term="SAP__common.FieldControl" Path="__FieldControl/itemno"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ItemType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Item Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ItemGroup">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Item Group"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/VendorNo">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Char20"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Char 20"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Waers">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Currency"/>
+                <Annotation Term="SAP__common.Heading" String="Crcy"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Currency Key"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Mrp">
+                <Annotation Term="SAP__common.Label" String="MRP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/SleeveType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Sleeve Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Status">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Status"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/DocumentType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Document Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Class">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Char20"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Char 20"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ProdBomNo">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Char20"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Char 20"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/NeckShape">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Neck Shape"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ItemCreated">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Char20"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Char 20"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/DesignHandover">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Char20"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Char 20"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ThreadType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Char20"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Char 20"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ThreadColor">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Char20"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Char 20"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/BomCreatedStatus">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Char20"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Char 20"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/FirmPlannedStatus">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Char20"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Char 20"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/AllocUploadStatus">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Char20"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Char 20"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/MhCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Code"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Merchandise Hierarchy Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Product">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Product/Occasion"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ProductCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Product/Occasion"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/SubCategory">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Sub Category"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Sub Category of MH"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/SubCategoryCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Sub Category"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Sub Category of MH"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ProdCategory">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Product Category"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ProdCategoryCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Product Category"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ProdDescription">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Error text: posting"/>
+                <Annotation Term="SAP__common.Heading" String="EText"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Error text after posting"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ItemList">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Item List"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/CreatedBy">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="User Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/FirmPlannedNo">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Purchase Requisition"/>
+                <Annotation Term="SAP__common.Heading" String="Purch.Req."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Purchase Requisition Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Remarks">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Error text: posting"/>
+                <Annotation Term="SAP__common.Heading" String="EText"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Error text after posting"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/LastModifiedBy">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="User Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/BaseColor2">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Base Color"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/RawMaterialSample">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/RawMatUom">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Base Unit of Measure"/>
+                <Annotation Term="SAP__common.Heading" String="BUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/RawMatQty">
+                <Annotation Term="SAP__measures.Unit" Path="RawMatUom"/>
+                <Annotation Term="SAP__common.Label" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Style">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Char15"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Char 15"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/LtEnteredBy">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Lead Time : Entered"/>
+                <Annotation Term="SAP__common.Heading" String="Lead Time : Entered BY"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Lead Time : Entered BY"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/mat_status">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Creation Status"/>
+                <Annotation Term="SAP__common.Heading" String="CS"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Creation Status - Seasonal Procurement"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/HasDraftEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has Draft"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has draft document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/DraftEntityCreationDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/DraftEntityLastChangeDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/HasActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/IsActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Is active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Is active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/__CreateByAssociationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/__EntityControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/__FieldControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/__OperationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/_bom">
+                <Annotation Term="SAP__common.Composition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZI_Style_master_data_ROOT">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_bom"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Path="__CreateByAssociationControl/_bom"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.DraftRoot">
+                    <Record>
+                        <PropertyValue Property="DiscardAction" String="com.sap.gateway.srvd.zsd_style_master.v0001.Discard"/>
+                        <PropertyValue Property="ActivationAction" String="com.sap.gateway.srvd.zsd_style_master.v0001.Activate"/>
+                        <PropertyValue Property="PreparationAction" String="com.sap.gateway.srvd.zsd_style_master.v0001.Prepare"/>
+                        <PropertyValue Property="EditAction" String="com.sap.gateway.srvd.zsd_style_master.v0001.Edit"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityCreationDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityLastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__CreateByAssociationControl</PropertyPath>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__FieldControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__CreateByAssociationControl</PropertyPath>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__FieldControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Path="__EntityControl/Updatable"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Edit(SAP__self.ZI_Style_master_data_ROOTType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/Edit"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType">
+                <Annotation Term="SAP__common.Label" String="Projection View"/>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Style Master"/>
+                            <PropertyValue Property="ID" String="StyleCode"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Identification"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="BOM"/>
+                            <PropertyValue Property="ID" String="BOM"/>
+                            <PropertyValue Property="Target" AnnotationPath="_bom/@SAP__UI.LineItem"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Style Master"/>
+                        <PropertyValue Property="TypeNamePlural" String="Style Master"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Value" Path="StyleCode"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Style ID"/>
+                            <PropertyValue Property="Value" Path="Styleid"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Style Code"/>
+                            <PropertyValue Property="Value" Path="StyleCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Item No."/>
+                            <PropertyValue Property="Value" Path="itemno"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Season"/>
+                            <PropertyValue Property="Value" Path="Season"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Design Color"/>
+                            <PropertyValue Property="Value" Path="DesignColor"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Category"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ArticleSize"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Style ID"/>
+                            <PropertyValue Property="Value" Path="Styleid"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Style Code"/>
+                            <PropertyValue Property="Value" Path="StyleCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Item No."/>
+                            <PropertyValue Property="Value" Path="itemno"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Season"/>
+                            <PropertyValue Property="Value" Path="Season"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Design Color"/>
+                            <PropertyValue Property="Value" Path="DesignColor"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Old Category"/>
+                            <PropertyValue Property="Value" Path="Category"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Article Size"/>
+                            <PropertyValue Property="Value" Path="ArticleSize"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Styleid</PropertyPath>
+                        <PropertyPath>StyleCode</PropertyPath>
+                        <PropertyPath>Season</PropertyPath>
+                        <PropertyPath>DesignColor</PropertyPath>
+                        <PropertyPath>ArticleSize</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.UnitsOfMeasure">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="UnitsOfMeasure"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/Styleid">
+                <Annotation Term="SAP__common.Label" String="Style ID"/>
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="SAP Style No."/>
+                <Annotation Term="SAP__common.QuickInfo" String="SAP Style No."/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/StyleCode">
+                <Annotation Term="SAP__common.Label" String="Style Code"/>
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Text Field Length 90"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/ItemType">
+                <Annotation Term="SAP__common.Label" String="Item Type"/>
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Item Type"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Item Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/FabricNo">
+                <Annotation Term="SAP__common.Label" String="Fabric No."/>
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/OldFabricNo">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/StyleType">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Style Type ( Copy, S"/>
+                <Annotation Term="SAP__common.Heading" String="Style Type ( Copy, SMU, Repeat, Reopen)"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Style Type ( Copy, SMU, Repeat, Reopen)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/Season">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Season"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/DesignColor">
+                <Annotation Term="SAP__common.Label" String="Design Color"/>
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Heading" String="Text"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Text (30 Characters)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/Sequence">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="char8"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Character field, 8 characters long"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/ArticleSize">
+                <Annotation Term="SAP__common.Label" String="Article Size"/>
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Size"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Size"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/Category">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Category"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Category of User's Department"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/BaseColor">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Base Color"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/BomNo">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Char20"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Char 20"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/FabricUsage">
+                <Annotation Term="SAP__common.Label" String="Fabric Usage"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Fabric Usage"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Fabric Usage"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/FabricVariety">
+                <Annotation Term="SAP__common.Label" String="Fabric Variety"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Fabric Variety"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Fabric Variety"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/FabricType">
+                <Annotation Term="SAP__common.Label" String="Fabric Type"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Fabric Type"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Fabric Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/FabricContent">
+                <Annotation Term="SAP__common.Label" String="Fabric Content"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Base Fabric"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Base Fabric"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/FabricBase">
+                <Annotation Term="SAP__common.Label" String="Fabric Base"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Fabric Base"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Fabric Base"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/CountConstruction">
+                <Annotation Term="SAP__common.Label" String="Count Construction"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Char20"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Char 20"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/ColorFamily">
+                <Annotation Term="SAP__common.Label" String="Color Family"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Color Family"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Colour Family"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/Color">
+                <Annotation Term="SAP__common.Label" String="Color"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Base Color"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Base Color"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/FabricRemarks">
+                <Annotation Term="SAP__common.Label" String="Fabric Remarks"/>
+                <Annotation Term="SAP__common.Heading" String="Text"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Text (100 characters)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/FabricDesc">
+                <Annotation Term="SAP__common.Label" String="Fabric Desc"/>
+                <Annotation Term="SAP__common.Heading" String="Text"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Text (100 characters)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/ItemGroup">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Item Group"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/ProductType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Item Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/BaseUom">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Base Uom"/>
+                <Annotation Term="SAP__common.Heading" String="BUn"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Base Unit of Measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/FabricAverage">
+                <Annotation Term="SAP__common.Label" String="Fabric Average"/>
+                <Annotation Term="SAP__common.Heading" String="Quantity"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/FabricWidth">
+                <Annotation Term="SAP__common.Label" String="Fabric Width"/>
+                <Annotation Term="SAP__common.Heading" String="Quantity"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/Uom">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Base Unit of Measure"/>
+                <Annotation Term="SAP__common.Heading" String="BUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/GarmentLength">
+                <Annotation Term="SAP__common.Label" String="Garment Length"/>
+                <Annotation Term="SAP__common.Heading" String="Quantity"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/SleeveLength">
+                <Annotation Term="SAP__common.Label" String="Sleeve Length"/>
+                <Annotation Term="SAP__common.Heading" String="Quantity"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/ChestMeasurement">
+                <Annotation Term="SAP__common.Label" String="Chest Measurement"/>
+                <Annotation Term="SAP__common.Heading" String="Quantity"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/ShoulderMeasurement">
+                <Annotation Term="SAP__common.Label" String="Shoulder Measurement"/>
+                <Annotation Term="SAP__common.Heading" String="Quantity"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/Hip">
+                <Annotation Term="SAP__common.Label" String="Hip"/>
+                <Annotation Term="SAP__common.Heading" String="Quantity"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/WaistMeasurement">
+                <Annotation Term="SAP__common.Label" String="Waist Measurement"/>
+                <Annotation Term="SAP__common.Heading" String="Quantity"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/InsemLength">
+                <Annotation Term="SAP__common.Label" String="Insem Length"/>
+                <Annotation Term="SAP__common.Heading" String="Quantity"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/DirectPurItem">
+                <Annotation Term="SAP__common.Label" String="Direct Purchase"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Data element for domain BOOLE: TRUE (='X') and FALSE (=' ')"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/Wip">
+                <Annotation Term="SAP__common.Label" String="WIP"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Data element for domain BOOLE: TRUE (='X') and FALSE (=' ')"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/WipRefNo">
+                <Annotation Term="SAP__common.Label" String="WIP Ref No."/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/MeasurementCreated">
+                <Annotation Term="SAP__common.Label" String="Measurement Created"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Data element for domain BOOLE: TRUE (='X') and FALSE (=' ')"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/MatNo">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/Vendor">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Supplier"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Supplier's Account Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/PriceUnit">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Currency"/>
+                <Annotation Term="SAP__common.Heading" String="Crcy"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Currency Key"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/ProcessLoss">
+                <Annotation Term="SAP__common.Label" String="Process Loss"/>
+                <Annotation Term="SAP__common.Heading" String="Quantity"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/ItemNew">
+                <Annotation Term="SAP__common.Label" String="New/Old Item"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Data element for domain BOOLE: TRUE (='X') and FALSE (=' ')"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/FabricNoMain">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/LastChangeBy">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="User Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/HasDraftEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has Draft"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has draft document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/DraftEntityCreationDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/DraftEntityLastChangeDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/HasActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/IsActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Is active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Is active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/__EntityControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/__OperationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZI_STYLE_BOM_COMP_VIEW">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_stl"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.DraftNode">
+                    <Record/>
+                </Annotation>
+                <Annotation Term="SAP__common.DraftActivationVia">
+                    <Collection>
+                        <String>SAP__self.Container/ZI_Style_master_data_ROOT</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityCreationDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityLastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Path="__EntityControl/Updatable"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.CheckSizeMsmt(SAP__self.ZI_STYLE_BOM_COMP_VIEWType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/CheckSizeMsmt"/>
+            </Annotations>
+            <Annotations Target="SAP__self.DeleteSizeMsmt(SAP__self.ZI_STYLE_BOM_COMP_VIEWType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/DeleteSizeMsmt"/>
+            </Annotations>
+            <Annotations Target="SAP__self.EnterSizeMsmt(SAP__self.ZI_STYLE_BOM_COMP_VIEWType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/EnterSizeMsmt"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType">
+                <Annotation Term="SAP__common.Label" String="BOM item data"/>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Style ID"/>
+                            <PropertyValue Property="Value" Path="Styleid"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Style Code"/>
+                            <PropertyValue Property="Value" Path="StyleCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Season"/>
+                            <PropertyValue Property="Value" Path="Season"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Design Color"/>
+                            <PropertyValue Property="Value" Path="DesignColor"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric No."/>
+                            <PropertyValue Property="Value" Path="FabricNo"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Item Type"/>
+                            <PropertyValue Property="Value" Path="ItemType"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Article Size"/>
+                            <PropertyValue Property="Value" Path="ArticleSize"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Usage"/>
+                            <PropertyValue Property="Value" Path="FabricUsage"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Variety"/>
+                            <PropertyValue Property="Value" Path="FabricVariety"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Type"/>
+                            <PropertyValue Property="Value" Path="FabricType"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Content"/>
+                            <PropertyValue Property="Value" Path="FabricContent"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Base"/>
+                            <PropertyValue Property="Value" Path="FabricBase"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Count Construction"/>
+                            <PropertyValue Property="Value" Path="CountConstruction"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Color Family"/>
+                            <PropertyValue Property="Value" Path="ColorFamily"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Color"/>
+                            <PropertyValue Property="Value" Path="Color"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Remarks"/>
+                            <PropertyValue Property="Value" Path="FabricRemarks"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Direct Purchase"/>
+                            <PropertyValue Property="Value" Path="DirectPurItem"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="WIP"/>
+                            <PropertyValue Property="Value" Path="Wip"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Process Loss"/>
+                            <PropertyValue Property="Value" Path="ProcessLoss"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="WIP Ref No."/>
+                            <PropertyValue Property="Value" Path="WipRefNo"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Desc"/>
+                            <PropertyValue Property="Value" Path="FabricDesc"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Uom"/>
+                            <PropertyValue Property="Value" Path="BaseUom"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Average"/>
+                            <PropertyValue Property="Value" Path="FabricAverage"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Width"/>
+                            <PropertyValue Property="Value" Path="FabricWidth"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Garment Length"/>
+                            <PropertyValue Property="Value" Path="GarmentLength"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Sleeve Length"/>
+                            <PropertyValue Property="Value" Path="SleeveLength"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Chest Measurement"/>
+                            <PropertyValue Property="Value" Path="ChestMeasurement"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Shoulder Measurement"/>
+                            <PropertyValue Property="Value" Path="ShoulderMeasurement"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Hip"/>
+                            <PropertyValue Property="Value" Path="Hip"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Waist Measurement"/>
+                            <PropertyValue Property="Value" Path="WaistMeasurement"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Insem Length"/>
+                            <PropertyValue Property="Value" Path="InsemLength"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Measurement Created"/>
+                            <PropertyValue Property="Value" Path="MeasurementCreated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="New/Old Item"/>
+                            <PropertyValue Property="Value" Path="ItemNew"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Style ID"/>
+                            <PropertyValue Property="Value" Path="Styleid"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Style Code"/>
+                            <PropertyValue Property="Value" Path="StyleCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Season"/>
+                            <PropertyValue Property="Value" Path="Season"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Design Color"/>
+                            <PropertyValue Property="Value" Path="DesignColor"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric No."/>
+                            <PropertyValue Property="Value" Path="FabricNo"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Item Type"/>
+                            <PropertyValue Property="Value" Path="ItemType"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Article Size"/>
+                            <PropertyValue Property="Value" Path="ArticleSize"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Usage"/>
+                            <PropertyValue Property="Value" Path="FabricUsage"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Variety"/>
+                            <PropertyValue Property="Value" Path="FabricVariety"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Type"/>
+                            <PropertyValue Property="Value" Path="FabricType"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Content"/>
+                            <PropertyValue Property="Value" Path="FabricContent"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Base"/>
+                            <PropertyValue Property="Value" Path="FabricBase"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Count Construction"/>
+                            <PropertyValue Property="Value" Path="CountConstruction"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Color Family"/>
+                            <PropertyValue Property="Value" Path="ColorFamily"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Color"/>
+                            <PropertyValue Property="Value" Path="Color"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Remarks"/>
+                            <PropertyValue Property="Value" Path="FabricRemarks"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Direct Purchase"/>
+                            <PropertyValue Property="Value" Path="DirectPurItem"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="WIP"/>
+                            <PropertyValue Property="Value" Path="Wip"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Process Loss"/>
+                            <PropertyValue Property="Value" Path="ProcessLoss"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="WIP Ref No."/>
+                            <PropertyValue Property="Value" Path="WipRefNo"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Desc"/>
+                            <PropertyValue Property="Value" Path="FabricDesc"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Uom"/>
+                            <PropertyValue Property="Value" Path="BaseUom"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Average"/>
+                            <PropertyValue Property="Value" Path="FabricAverage"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Fabric Width"/>
+                            <PropertyValue Property="Value" Path="FabricWidth"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Garment Length"/>
+                            <PropertyValue Property="Value" Path="GarmentLength"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Sleeve Length"/>
+                            <PropertyValue Property="Value" Path="SleeveLength"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Chest Measurement"/>
+                            <PropertyValue Property="Value" Path="ChestMeasurement"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Shoulder Measurement"/>
+                            <PropertyValue Property="Value" Path="ShoulderMeasurement"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Hip"/>
+                            <PropertyValue Property="Value" Path="Hip"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Waist Measurement"/>
+                            <PropertyValue Property="Value" Path="WaistMeasurement"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Insem Length"/>
+                            <PropertyValue Property="Value" Path="InsemLength"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Measurement Created"/>
+                            <PropertyValue Property="Value" Path="MeasurementCreated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="New/Old Item"/>
+                            <PropertyValue Property="Value" Path="ItemNew"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Check Size Meas"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zsd_style_master.v0001.CheckSizeMsmt(com.sap.gateway.srvd.zsd_style_master.v0001.ZI_STYLE_BOM_COMP_VIEWType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Enter Size Meas"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zsd_style_master.v0001.EnterSizeMsmt(com.sap.gateway.srvd.zsd_style_master.v0001.ZI_STYLE_BOM_COMP_VIEWType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Delete Size Meas"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zsd_style_master.v0001.DeleteSizeMsmt(com.sap.gateway.srvd.zsd_style_master.v0001.ZI_STYLE_BOM_COMP_VIEWType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftEntityType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Entity ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreatedByUser">
+                <Annotation Term="SAP__common.Text" Path="CreatedByUserDescription"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_draftadministrativeuservh/0001;ps='srvd-zsd_style_master-0001';va='com.sap.gateway.srvd.zsd_style_master.v0001.et-i_draftadministrativedata.createdbyuser'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Draft Created By"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangedByUser">
+                <Annotation Term="SAP__common.Text" Path="LastChangedByUserDescription"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_draftadministrativeuservh/0001;ps='srvd-zsd_style_master-0001';va='com.sap.gateway.srvd.zsd_style_master.v0001.et-i_draftadministrativedata.lastchangedbyuser'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed By"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftAccessType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Access Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/InProcessByUser">
+                <Annotation Term="SAP__common.Text" Path="InProcessByUserDescription"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft In Process By"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType">
+                <Annotation Term="SAP__common.Label" String="Draft Administration Data"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/I_DraftAdministrativeData">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CreationDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="LastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftUUID">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft (Technical ID)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/ProcessingStartDateTime">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft In Process Since"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsKeptByUser">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Is Kept By User"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/EnqueueStartDateTime">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Locked Since"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsCreatedByMe">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created By Me"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsLastChangedByMe">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed By Me"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsProcessedByMe">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft In Process By Me"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreatedByUserDescription">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created By (Description)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangedByUserDescription">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed By (Description)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/InProcessByUserDescription">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft In Process By (Description)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/StyleDesc">
+                <Annotation Term="SAP__common.Label" String="Description"/>
+                <Annotation Term="SAP__common.Heading" String="Text"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Text Field"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/LaunchDate">
+                <Annotation Term="SAP__common.Label" String="Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Wash_Care">
+                <Annotation Term="SAP__common.Label" String="Text"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Text for translation"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Approved">
+                <Annotation Term="SAP__common.Label" String="TRUE"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Data element for domain BOOLE: TRUE (='X') and FALSE (=' ')"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ApprovedDate">
+                <Annotation Term="SAP__common.Label" String="Date"/>
+                <Annotation Term="SAP__common.Heading" String="Date in Format YYYYMMDD"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Field of type DATS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/UploadDate">
+                <Annotation Term="SAP__common.Label" String="Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/PictureDirectory">
+                <Annotation Term="SAP__common.Label" String="Text"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Text for translation"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ProdDescription2">
+                <Annotation Term="SAP__common.Label" String="Text"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Text (100 characters)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/AllocQty">
+                <Annotation Term="SAP__common.Label" String="Dummy Dec07"/>
+                <Annotation Term="SAP__common.Heading" String="Dec07"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Decimal field of length 7"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/ProductTitle">
+                <Annotation Term="SAP__common.Label" String="Text"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Text (100 characters)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/CreatedOn">
+                <Annotation Term="SAP__common.Label" String="Date"/>
+                <Annotation Term="SAP__common.Heading" String="Date in Format YYYYMMDD"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Field of type DATS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/CreationTime">
+                <Annotation Term="SAP__common.Label" String="Time"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/LastModifiedDate">
+                <Annotation Term="SAP__common.Label" String="Date"/>
+                <Annotation Term="SAP__common.Heading" String="Date in Format YYYYMMDD"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Field of type DATS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/SizeInCm">
+                <Annotation Term="SAP__common.Label" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/RefStylecode">
+                <Annotation Term="SAP__common.Label" String="Text Field Length 90"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Color">
+                <Annotation Term="SAP__common.Label" String="Color"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/Material">
+                <Annotation Term="SAP__common.Label" String="Material"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/LtEnteredOn">
+                <Annotation Term="SAP__common.Label" String="Lead Time : Entered"/>
+                <Annotation Term="SAP__common.Heading" String="Lead Time : Entered On"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Lead Time : Entered On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/__CreateByAssociationControl/_bom">
+                <Annotation Term="SAP__common.Label" String="Dynamic CbA-Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Create by Association Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Create via Association Control Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/__EntityControl/Updatable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/__FieldControl/itemno">
+                <Annotation Term="SAP__common.Label" String="Dyn. Field Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Field Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Field Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTType/__OperationControl/Edit">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/TentativeRate">
+                <Annotation Term="SAP__common.Label" String="Amount in Loc. Curr."/>
+                <Annotation Term="SAP__common.Heading" String="Loc. Curr. Amount"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Amount in local currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/StandardCost">
+                <Annotation Term="SAP__common.Label" String="Amount in Loc. Curr."/>
+                <Annotation Term="SAP__common.Heading" String="Loc. Curr. Amount"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Amount in local currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/WipQty">
+                <Annotation Term="SAP__common.Label" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/NotConsider">
+                <Annotation Term="SAP__common.Label" String="TRUE"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Data element for domain BOOLE: TRUE (='X') and FALSE (=' ')"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/FabricSeq">
+                <Annotation Term="SAP__common.Label" String="Number of Records"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/LastChangeOn">
+                <Annotation Term="SAP__common.Label" String="Date"/>
+                <Annotation Term="SAP__common.Heading" String="Date in Format YYYYMMDD"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Field of type DATS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/LastChangeAt">
+                <Annotation Term="SAP__common.Label" String="Field of type TIMS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/__EntityControl/Updatable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/__OperationControl/CheckSizeMsmt">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/__OperationControl/DeleteSizeMsmt">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWType/__OperationControl/EnterSizeMsmt">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreationDateTime">
+                <Annotation Term="SAP__common.Label" String="Draft Created On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangeDateTime">
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTControl/itemno">
+                <Annotation Term="SAP__common.Label" String="Dyn. Field Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Field Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Field Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTCbAControl/_bom">
+                <Annotation Term="SAP__common.Label" String="Dynamic CbA-Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Create by Association Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Create via Association Control Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_Style_master_data_ROOTOperationControl/Edit">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWOperationControl/CheckSizeMsmt">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWOperationControl/DeleteSizeMsmt">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_STYLE_BOM_COMP_VIEWOperationControl/EnterSizeMsmt">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.EntityControl/Updatable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Edit(SAP__self.ZI_Style_master_data_ROOTType)/PreserveChanges">
+                <Annotation Term="SAP__common.Label" String="TRUE"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Data element for domain BOOLE: TRUE (='X') and FALSE (=' ')"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,2 @@
+sap.ui.define(["sap/fe/test/ListReport"],function(t){"use strict";var e={actions:{},assertions:{}};return new t({appId:"zstylemasterfin.zstylemasterfin",componentId:"ZI_Style_master_data_ROOTList",contextPath:"/ZI_Style_master_data_ROOT"},e)});
+//# sourceMappingURL=ZI_Style_master_data_ROOTList.js.map

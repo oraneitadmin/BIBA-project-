@@ -1,0 +1,2 @@
+sap.ui.define(["sap/fe/test/ObjectPage"],function(t){"use strict";var e={actions:{},assertions:{}};return new t({appId:"zstylemasterfin.zstylemasterfin",componentId:"ZI_STYLE_BOM_COMP_VIEWObjectPage",contextPath:"/ZI_Style_master_data_ROOT/_bom"},e)});
+//# sourceMappingURL=ZI_STYLE_BOM_COMP_VIEWObjectPage.js.map
