@@ -108,15 +108,6 @@
                 }
             ]
         },
-        "extends": {
-            "extensions": {
-                "sap.ui.controllerExtensions": {
-                    "sap.fe.templates.ObjectPage": {
-                        "controllerName": "zstylemasterfin.zstylemasterfin.ext.controller.ObjectPageExt"
-                    }
-                }
-            }
-        },
         "routing": {
             "config": {},
             "routes": [
